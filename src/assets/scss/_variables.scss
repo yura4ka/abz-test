@@ -1,0 +1,36 @@
+@use "./functions" as *;
+
+// fonts
+
+$font: "Nunito", sans-serif;
+
+$font-normal: 400;
+
+$text-base: toRem(16);
+$text-lg: toRem(40);
+
+$leading-normal: toRem(26);
+$leading-lg: toRem(40);
+
+// colors
+
+$clr-bg: #f8f8f8;
+$clr-primary: #f4e041;
+$clr-primary-accent: #ffe302;
+$clr-secondary: #00bdd3;
+$clr-disabled: #b4b4b4;
+$clr-error: #cb3d40;
+$clr-border: #d0cfcf;
+$clr-muted: #7e7e7e;
+$clr-text: rgba(0, 0, 0, 0.87);
+
+// sizes
+
+$container-size: toRem(1170);
+
+// screens
+
+$screen-xs: 360px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 2056px;

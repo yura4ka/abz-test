@@ -1,0 +1,15 @@
+@use "./variables" as *;
+
+html {
+  color: $clr-text;
+  font-family: $font;
+  font-size: $text-base;
+  font-weight: $font-normal;
+  line-height: $leading-normal;
+}
+
+h1,
+h2 {
+  font-size: $text-lg;
+  line-height: $leading-lg;
+}
