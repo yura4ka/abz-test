@@ -1,0 +1,13 @@
+@use "@/assets/scss" as *;
+
+.tooltip {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.content {
+  background-color: $clr-text;
+  color: $clr-white;
+  border-radius: toRem(4);
+  padding: toRem(3) toRem(16);
+}
