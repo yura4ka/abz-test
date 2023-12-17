@@ -1,0 +1,61 @@
+@use "@/assets/scss" as *;
+
+.header {
+  background-color: $clr-bg;
+}
+
+.container {
+  @extend %container;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("@/assets/images/bg-img.jpeg"), lightgray;
+  background-repeat: no-repeat;
+  background-position: -446.56px -317.009px;
+  background-size: 342.315% 164.03%;
+  color: $clr-white;
+  text-align: center;
+
+  @media screen and (min-width: $screen-sm) {
+    background-position: -952.661px -317.009px;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    background-position: -1270.215px -412.112px;
+  }
+
+  @media screen and (min-width: $container-size) {
+    background-position: -695px -842.321px;
+    background-size: 218.803% 262.115%;
+  }
+}
+
+.content-wrapper {
+  max-width: toRem(328);
+  margin: 0 auto;
+  padding: toRem(40) 0 toRem(71) 0;
+
+  @media screen and (min-width: $screen-sm) {
+    max-width: toRem(380);
+    padding: toRem(89) 0 toRem(88) 0;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    padding: toRem(164) 0 toRem(163) 0;
+  }
+
+  h1 {
+    padding-bottom: toRem(21);
+  }
+
+  p {
+    padding-bottom: toRem(32);
+  }
+}
+
+.btn {
+  @extend %btn-primary-link;
+  color: $clr-text;
+}

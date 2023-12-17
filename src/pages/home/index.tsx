@@ -1,5 +1,11 @@
+import Hero from "./Hero";
+
 function Home() {
-  return <div>index</div>;
+  return (
+    <div>
+      <Hero />
+    </div>
+  );
 }
 
 export default Home;
