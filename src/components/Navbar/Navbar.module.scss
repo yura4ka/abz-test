@@ -1,0 +1,21 @@
+@use "@/assets/scss" as *;
+
+.container {
+  @extend %container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: toRem(14);
+  min-height: toRem(60);
+}
+
+.list {
+  display: flex;
+  gap: toRem(10);
+}
+
+.link {
+  @extend %btn-primary;
+  color: inherit;
+  text-decoration: none;
+}

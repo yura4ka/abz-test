@@ -1,0 +1,48 @@
+@use "./variables" as *;
+@use "./functions" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+%container {
+  max-width: $container-size;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+
+  @media screen and (min-width: $screen-xs) {
+    padding: 0 toRem(16);
+  }
+
+  @media screen and (min-width: $screen-sm) {
+    padding: 0 toRem(32);
+  }
+
+  @media screen and (min-width: $screen-md) {
+    padding: 0 toRem(60);
+  }
+
+  @media screen and (min-width: calc($container-size + 2 * toRem(60))) {
+    padding: 0;
+  }
+}
+
+%btn-primary {
+  display: flex;
+  min-width: toRem(100);
+  justify-content: center;
+  padding: toRem(4) 0;
+  background-color: $clr-primary;
+  transition: all 300ms;
+  border-radius: toRem(80);
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $clr-primary-accent;
+  }
+
+  &:disabled {
+    background-color: $clr-disabled;
+  }
+}
