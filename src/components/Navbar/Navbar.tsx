@@ -13,7 +13,7 @@ function Navbar() {
         <img src={logo} className={cl.logo} />
         <ul className={cl.list}>
           {LINKS.map((link) => (
-            <li>
+            <li key={link.title}>
               <a className={cl.link} href={link.href}>
                 {link.title}
               </a>
