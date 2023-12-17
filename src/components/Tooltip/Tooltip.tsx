@@ -18,8 +18,8 @@ const Tooltip = ({ content, children }: Props) => {
   const { refs, floatingStyles, context } = useFloating({
     open: isOpen,
     onOpenChange: setIsOpen,
-    placement: "bottom-start",
-    middleware: [offset(15)],
+    placement: "bottom",
+    middleware: [offset(10)],
   });
   const { isMounted, styles } = useTransitionStyles(context, {
     initial: {

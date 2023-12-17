@@ -1,0 +1,19 @@
+@use "@/assets/scss" as *;
+
+.card {
+  display: grid;
+  justify-items: center;
+  gap: toRem(20);
+  padding: toRem(20);
+  background-color: $clr-white;
+  border-radius: toRem(10);
+
+  p {
+    @include line-clamp(1);
+  }
+}
+
+.secondary {
+  display: grid;
+  justify-items: center;
+}
