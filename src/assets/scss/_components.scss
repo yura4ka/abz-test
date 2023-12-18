@@ -1,10 +1,6 @@
 @use "./variables" as *;
 @use "./functions" as *;
 
-* {
-  box-sizing: border-box;
-}
-
 %container {
   max-width: $container-size;
   margin: 0 auto;
