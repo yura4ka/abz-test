@@ -1,0 +1,9 @@
+@use "@/assets/scss" as *;
+
+.wrapper {
+  background-color: $clr-bg;
+
+  section {
+    padding-top: toRem(140);
+  }
+}

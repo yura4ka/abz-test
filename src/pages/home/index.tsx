@@ -1,10 +1,15 @@
 import Hero from "./Hero";
+import cl from "./Home.module.scss";
+import Users from "./Users";
 
 function Home() {
   return (
-    <div>
+    <main>
       <Hero />
-    </div>
+      <div className={cl.wrapper}>
+        <Users />
+      </div>
+    </main>
   );
 }
 

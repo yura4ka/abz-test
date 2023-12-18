@@ -1,0 +1,34 @@
+@use "@/assets/scss" as *;
+
+.container {
+  @extend %container;
+}
+
+.header {
+  text-align: center;
+}
+
+.users {
+  padding-top: toRem(50);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(toRem(282), 1fr));
+  gap: toRem(20);
+
+  @media screen and (min-width: $screen-sm) {
+    gap: toRem(16);
+  }
+
+  @media screen and (min-width: $screen-md) {
+    gap: toRem(29);
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  padding-top: toRem(50);
+}
+
+.error {
+  color: $clr-error;
+}
