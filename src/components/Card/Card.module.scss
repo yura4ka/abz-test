@@ -8,8 +8,19 @@
   background-color: $clr-white;
   border-radius: toRem(10);
 
-  p {
+  p,
+  a {
     @include line-clamp(1);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 300ms;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

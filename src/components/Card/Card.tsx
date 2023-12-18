@@ -22,10 +22,10 @@ const Card = ({ user }: Props) => {
           <p>{user.position}</p>
         </Tooltip>
         <Tooltip content={user.email}>
-          <p>{user.email}</p>
+          <a href={`mailto:${user.email}`}>{user.email}</a>
         </Tooltip>
         <Tooltip content={phone}>
-          <p>{phone}</p>
+          <a href={`tel:${user.phone}`}>{phone}</a>
         </Tooltip>
       </div>
     </div>
