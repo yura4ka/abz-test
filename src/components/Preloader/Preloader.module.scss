@@ -1,0 +1,9 @@
+@use "@/assets/scss" as *;
+
+.preloader {
+  animation: spin 1s linear infinite;
+
+  path {
+    fill: $clr-secondary;
+  }
+}
