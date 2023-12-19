@@ -83,7 +83,8 @@ const Form = () => {
 
       createUser.reset();
       if (error.status === 409) {
-        setError("root.taken", { type: "manual", message: error.message });
+        setError("phone", { type: "manual", message: error.message });
+        setError("name", { type: "manual", message: error.message });
       }
 
       for (const [name, err] of Object.entries(error.details.fails ?? [])) {
@@ -103,7 +104,7 @@ const Form = () => {
         token: token.token,
       });
     } catch {
-      undefined;
+      /* empty */
     }
   };
 
