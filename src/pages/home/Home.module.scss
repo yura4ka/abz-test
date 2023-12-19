@@ -2,8 +2,13 @@
 
 .wrapper {
   background-color: $clr-bg;
+  padding-bottom: toRem(100);
 
   section {
+    @extend %container;
     padding-top: toRem(140);
+    h2 {
+      text-align: center;
+    }
   }
 }

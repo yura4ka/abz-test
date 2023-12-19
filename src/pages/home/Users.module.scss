@@ -1,13 +1,5 @@
 @use "@/assets/scss" as *;
 
-.container {
-  @extend %container;
-}
-
-.header {
-  text-align: center;
-}
-
 .users {
   padding-top: toRem(50);
   display: grid;

@@ -1,0 +1,37 @@
+@use "@/assets/scss" as *;
+
+.form {
+  display: grid;
+  gap: toRem(50);
+  padding-top: toRem(50);
+  max-width: toRem(380);
+  margin: 0 auto;
+}
+
+.radio-group {
+  display: grid;
+  gap: toRem(7);
+  margin-top: toRem(-7);
+  justify-items: start;
+
+  p {
+    padding-bottom: toRem(3);
+  }
+}
+
+.submit {
+  justify-self: center;
+}
+
+.info {
+  display: grid;
+  place-content: center;
+  height: 290px;
+  padding-top: toRem(50);
+}
+
+.success-img {
+  height: 100%;
+  margin: 0 auto;
+  padding-top: toRem(50);
+}
