@@ -1,0 +1,49 @@
+@use "@/assets/scss" as *;
+
+.radio {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: toRem(12);
+  cursor: pointer;
+
+  &:has(:focus-visible) {
+    outline: 1px solid black;
+  }
+}
+
+.input {
+  appearance: none;
+  height: 0;
+  width: 0;
+  position: absolute;
+
+  &:checked ~ .checkbox {
+    border-color: $clr-secondary;
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+.checkbox {
+  position: relative;
+  width: toRem(20);
+  height: toRem(20);
+  border-radius: 100%;
+  border: 1px solid $clr-border;
+  transition: all 300ms;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: toRem(10);
+    height: toRem(10);
+    border-radius: 100%;
+    background-color: $clr-secondary;
+    transition: all 300ms;
+  }
+}
