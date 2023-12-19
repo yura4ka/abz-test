@@ -1,0 +1,51 @@
+@use "@/assets/scss" as *;
+
+.input-container {
+  @extend %input;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: $clr-muted;
+
+  &:focus-within {
+    border: 2px solid $clr-secondary;
+    .upload-btn {
+      box-shadow: 0 0 0 2px $clr-secondary;
+    }
+  }
+
+  &.error {
+    border: 2px solid $clr-error;
+
+    .upload-btn {
+      box-shadow: 0 0 0 2px $clr-error;
+    }
+  }
+}
+
+.input {
+  appearance: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.upload-btn {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  width: toRem(83);
+  color: $clr-text;
+  box-shadow: 0 0 0 1px $clr-text;
+  border-top-left-radius: toRem(4);
+  border-bottom-left-radius: toRem(4);
+}
+
+.label {
+  @include line-clamp(1);
+  padding: 0 toRem(16);
+
+  &.has-value {
+    color: $clr-text;
+  }
+}

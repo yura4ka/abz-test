@@ -42,6 +42,7 @@
 
   &:disabled {
     background-color: $clr-disabled;
+    color: $clr-white-87;
   }
 }
 
@@ -49,4 +50,12 @@
   @extend %btn-primary;
   color: inherit;
   text-decoration: none;
+}
+
+%input {
+  width: 100%;
+  height: toRem(54);
+  border: 1px solid $clr-border;
+  border-radius: toRem(4);
+  background: transparent;
 }

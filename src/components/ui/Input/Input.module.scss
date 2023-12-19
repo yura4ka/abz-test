@@ -1,0 +1,80 @@
+@use "@/assets/scss" as *;
+
+.wrapper {
+  position: relative;
+}
+
+.input-container {
+  position: relative;
+  display: block;
+}
+
+.input {
+  @extend %input;
+  --accent-clr: #{$clr-border};
+  outline: none;
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--accent-clr);
+  padding: toRem(14) toRem(16);
+  transition: all 300ms;
+
+  &.error,
+  &:focus.error,
+  &.error ~ .label {
+    --accent-clr: #{$clr-error};
+  }
+
+  &:focus {
+    --accent-clr: #{$clr-secondary};
+    border-width: 2px;
+  }
+
+  &:placeholder-shown ~ .label {
+    transform: translate(toRem(16), toRem(14));
+    line-height: $leading-normal;
+    font-size: $text-base;
+    font-weight: $font-normal;
+    padding: 0;
+    z-index: 0;
+  }
+
+  &:focus ~ .label {
+    z-index: 2;
+    transform: translate(toRem(16), -50%);
+    padding: toRem(4) toRem(2);
+    line-height: 0;
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    color: var(--accent-clr, $clr-secondary);
+  }
+}
+
+.label {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  line-height: 0;
+  color: var(--accent-clr, $clr-muted);
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  padding: toRem(4) toRem(2);
+  background-color: $clr-bg;
+  transform: translate(toRem(16), -50%);
+  transition: all 300ms;
+}
+
+.details {
+  position: absolute;
+  font-size: $text-sm;
+  line-height: $leading-sm;
+  color: $clr-muted;
+  padding-left: toRem(16);
+  padding-top: toRem(4);
+  transition: all 300ms;
+
+  &.error {
+    color: $clr-error;
+  }
+}
