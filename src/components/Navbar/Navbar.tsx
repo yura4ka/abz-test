@@ -1,5 +1,5 @@
 import cl from "./Navbar.module.scss";
-import logo from "@/assets/images/logo.svg";
+import logo from "@/assets/images/Logo.svg";
 
 const LINKS = [
   { title: "Users", href: "#" },
