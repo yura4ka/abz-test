@@ -13,7 +13,7 @@ const Hero = () => {
             mind. They should also be excited to learn, as the world of
             Front-End Development keeps evolving.
           </p>
-          <a href="#" className={cl.btn}>
+          <a href="#sign-up" className={cl.btn}>
             Sign up
           </a>
         </div>

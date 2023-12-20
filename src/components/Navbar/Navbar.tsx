@@ -2,8 +2,8 @@ import cl from "./Navbar.module.scss";
 import logo from "@/assets/images/Logo.svg";
 
 const LINKS = [
-  { title: "Users", href: "#" },
-  { title: "Sign up", href: "#" },
+  { title: "Users", href: "#users" },
+  { title: "Sign up", href: "#sign-up" },
 ];
 
 function Navbar() {

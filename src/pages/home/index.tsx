@@ -8,8 +8,8 @@ function Home() {
     <main>
       <Hero />
       <div className={cl.wrapper}>
-        <Users className={cl.section} />
-        <Form className={cl.section} />
+        <Users id="users" className={cl.section} />
+        <Form id="sign-up" className={cl.section} />
       </div>
     </main>
   );
