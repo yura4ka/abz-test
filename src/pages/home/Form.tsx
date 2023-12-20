@@ -6,7 +6,7 @@ import {
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
-import Input from "@/components/ui/Input/Input";
+import Input from "@/components/Input/Input";
 import Button from "@/components/ui/Button/Button";
 import Radio from "@/components/ui/Radio/Radio";
 import Preloader from "@/components/Preloader/Preloader";

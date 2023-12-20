@@ -1,60 +1,20 @@
+import { forwardRef } from "react";
 import classNames from "classnames";
+import { InputProps } from "./index";
 import cl from "./Input.module.scss";
-import fileCl from "./FileInput.module.scss";
-import { InputHTMLAttributes, forwardRef } from "react";
 
-type Props = {
-  label: string;
-  details?: string;
-  errorMessage?: string;
-} & InputHTMLAttributes<HTMLInputElement>;
-
-const Input = forwardRef<HTMLInputElement, Props>(
-  ({ details, label, errorMessage, className, type, value, ...rest }, ref) => {
-    const isError = !!errorMessage;
-
-    const input =
-      type === "file" ? (
-        <label
-          className={classNames(
-            fileCl.inputContainer,
-            isError && fileCl.error,
-            className
-          )}
-        >
-          <input
-            className={fileCl.input}
-            ref={ref}
-            type="file"
-            {...rest}
-            placeholder=" "
-          />
-          <div className={fileCl.uploadBtn}>Upload</div>
-          <p className={classNames(fileCl.label, !!value && fileCl.hasValue)}>
-            {value ?? label}
-          </p>
-        </label>
-      ) : (
-        <label className={cl.inputContainer}>
-          <input
-            className={classNames(className, cl.input, isError && cl.error)}
-            {...rest}
-            ref={ref}
-            placeholder=" "
-          />
-          <div className={cl.label}>{label}</div>
-        </label>
-      );
-
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ label, className, isError, ...rest }, ref) => {
     return (
-      <div className={cl.wrapper}>
-        {input}
-        <p className={classNames(cl.details, isError && cl.error)}>
-          {isError ? errorMessage : details}
-        </p>
-      </div>
+      <label className={classNames(className, cl.inputContainer)}>
+        <input
+          className={classNames(cl.input, isError && cl.error)}
+          {...rest}
+          ref={ref}
+          placeholder=" "
+        />
+        <div className={cl.label}>{label}</div>
+      </label>
     );
   }
 );
-
-export default Input;
