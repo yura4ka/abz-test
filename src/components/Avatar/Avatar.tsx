@@ -24,6 +24,7 @@ const Avatar = ({ src, size = 70 }: Props) => {
   return (
     <img
       width={size}
+      alt=""
       className={cl.avatar}
       src={url}
       loading="lazy"

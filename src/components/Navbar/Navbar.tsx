@@ -10,7 +10,13 @@ function Navbar() {
   return (
     <nav>
       <div className={cl.container}>
-        <img src={logo} className={cl.logo} />
+        <img
+          src={logo}
+          width="104"
+          height="26"
+          className={cl.logo}
+          alt="TEST TASK"
+        />
         <ul className={cl.list}>
           {LINKS.map((link) => (
             <li key={link.title}>

@@ -138,7 +138,7 @@ const Form = (props: Props) => {
     return (
       <section {...props}>
         <h2>User successfully registered</h2>
-        <img className={cl.successImg} src={successImg} alt="" />
+        <img src={successImg} width="328" className={cl.successImg} alt="" />
       </section>
     );
   }
