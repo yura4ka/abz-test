@@ -6,7 +6,9 @@ import Preloader from "@/components/Preloader/Preloader";
 import Button from "@/components/ui/Button/Button";
 import classNames from "classnames";
 
-const Users = () => {
+type Props = React.HTMLAttributes<HTMLDivElement>;
+
+const Users = (props: Props) => {
   const { data, isError, hasNextPage, fetchNextPage, isFetching } =
     useInfiniteQuery({
       queryKey: ["users"],
@@ -44,8 +46,8 @@ const Users = () => {
   );
 
   return (
-    <section className={cl.container}>
-      <h2 className={cl.header}>Working with GET request</h2>
+    <section {...props}>
+      <h2>Working with GET request</h2>
       {users}
       {hasNextPage && (
         <div className={cl.info}>

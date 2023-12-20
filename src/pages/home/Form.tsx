@@ -1,17 +1,16 @@
-import Input from "@/components/ui/Input/Input";
-import cl from "./Form.module.scss";
+import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { emailRegex, phoneRegex } from "@/utils/format";
-import Button from "@/components/ui/Button/Button";
-import Radio from "@/components/ui/Radio/Radio";
 import {
   InfiniteData,
   useMutation,
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
-import { getPositions } from "@/api/positions";
+import Input from "@/components/ui/Input/Input";
+import Button from "@/components/ui/Button/Button";
+import Radio from "@/components/ui/Radio/Radio";
 import Preloader from "@/components/Preloader/Preloader";
+import { getPositions } from "@/api/positions";
 import { getToken } from "@/api/token";
 import {
   PostUserRequest,
@@ -19,15 +18,18 @@ import {
   UserResponse,
   postUser,
 } from "@/api/users";
-import { useEffect, useState } from "react";
-import successImg from "@/assets/images/success-image.svg";
 import { ApiError } from "@/api/ApiError";
+import { emailRegex, phoneRegex } from "@/utils/format";
+import successImg from "@/assets/images/success-image.svg";
+import cl from "./Form.module.scss";
 
 type FormData = Omit<PostUserRequest, "photo"> & {
   photo: FileList;
 };
 
-const Form = () => {
+type Props = React.HTMLAttributes<HTMLDivElement>;
+
+const Form = (props: Props) => {
   const queryClient = useQueryClient();
 
   const {
@@ -110,7 +112,7 @@ const Form = () => {
 
   if (isPositionsFetching || isSubmitting) {
     return (
-      <section>
+      <section {...props}>
         <h2>Working with POST request</h2>
         <div className={cl.info}>
           <Preloader />
@@ -121,7 +123,7 @@ const Form = () => {
 
   if (isPositionsError || fetchToken.isError || createUser.isError) {
     return (
-      <section>
+      <section {...props}>
         <h2>Working with POST request</h2>
         <div className={cl.info}>Error! Please, try again later...</div>
       </section>
@@ -130,7 +132,7 @@ const Form = () => {
 
   if (showSuccess) {
     return (
-      <section>
+      <section {...props}>
         <h2>User successfully registered</h2>
         <img className={cl.successImg} src={successImg} alt="" />
       </section>
@@ -138,7 +140,7 @@ const Form = () => {
   }
 
   return (
-    <section>
+    <section {...props}>
       <h2>Working with POST request</h2>
       <form className={cl.form} onSubmit={handleSubmit(onSubmit)}>
         <Input
