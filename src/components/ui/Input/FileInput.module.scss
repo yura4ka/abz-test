@@ -34,16 +34,17 @@
   display: grid;
   place-content: center;
   height: 100%;
-  width: toRem(83);
+  padding: 0 toRem(14);
   color: $clr-text;
   box-shadow: 0 0 0 1px $clr-text;
   border-top-left-radius: toRem(4);
   border-bottom-left-radius: toRem(4);
+  border-right: 1px solid transparent;
 }
 
 .label {
   @include line-clamp(1);
-  padding: 0 toRem(16);
+  padding: 0 toRem(16.5);
 
   &.has-value {
     color: $clr-text;

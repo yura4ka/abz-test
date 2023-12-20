@@ -86,7 +86,7 @@ const Form = (props: Props) => {
       createUser.reset();
       if (error.status === 409) {
         setError("phone", { type: "manual", message: error.message });
-        setError("name", { type: "manual", message: error.message });
+        setError("email", { type: "manual", message: error.message });
       }
 
       for (const [name, err] of Object.entries(error.details.fails ?? [])) {
