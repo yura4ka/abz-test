@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
 import cl from "./Layout.module.scss";
 
 type Props = {
@@ -12,7 +11,6 @@ const Layout = ({ children }: Props) => {
     <div className={cl.layout}>
       <Navbar />
       {children}
-      <Footer />
     </div>
   );
 };
