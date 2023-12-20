@@ -19,7 +19,7 @@ import {
   postUser,
 } from "@/api/users";
 import { ApiError } from "@/api/ApiError";
-import { emailRegex, phoneRegex } from "@/utils/format";
+import { emailRegex, normalizePhoneNumber, phoneRegex } from "@/utils/format";
 import successImg from "@/assets/images/success-image.svg";
 import cl from "./Form.module.scss";
 
@@ -102,7 +102,11 @@ const Form = (props: Props) => {
     try {
       const token = await fetchToken.mutateAsync();
       await createUser.mutateAsync({
-        user: { ...data, photo: data.photo[0] },
+        user: {
+          ...data,
+          photo: data.photo[0],
+          phone: normalizePhoneNumber(data.phone),
+        },
         token: token.token,
       });
     } catch {
@@ -174,7 +178,9 @@ const Form = (props: Props) => {
         <Input
           {...register("phone", {
             required: "The phone field is required.",
-            pattern: { value: phoneRegex, message: "+38 (XXX) XXX - XX - XX" },
+            validate: (value) =>
+              !!normalizePhoneNumber(value).match(phoneRegex) ||
+              "+38 (XXX) XXX - XX - XX",
           })}
           type="tel"
           autoComplete="tel"
