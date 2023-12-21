@@ -10,4 +10,6 @@
   color: $clr-white;
   border-radius: toRem(4);
   padding: toRem(3) toRem(16);
+  word-break: break-all;
+  max-width: toRem(328);
 }
