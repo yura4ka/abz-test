@@ -10,12 +10,12 @@ type Props = {
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const InputWrapper = forwardRef<HTMLInputElement, Props>(
-  ({ details, errorMessage, className, type, ...rest }, ref) => {
+  ({ details, errorMessage, className, ...rest }, ref) => {
     const isError = !!errorMessage;
 
     return (
       <div className={classNames(className, cl.wrapper)}>
-        {type === "file" ? (
+        {rest.type === "file" ? (
           <FileInput ref={ref} isError={isError} {...rest} />
         ) : (
           <Input ref={ref} isError={isError} {...rest} />
